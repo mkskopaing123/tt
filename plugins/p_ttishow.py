@@ -10,7 +10,7 @@ from Script import script
 from pyrogram.errors import ChatAdminRequired
 
 @Client.on_message(filters.new_chat_members & filters.group)
-async def save_group(bot, message):
+async def welcome_msg(bot, message):
     r_j_check = [u.id for u in message.new_chat_members]
     if temp.ME in r_j_check:
         if message.chat.id in temp.BANNED_CHATS:
@@ -34,9 +34,8 @@ async def save_group(bot, message):
             InlineKeyboardButton('Support Chat', url=f'https://t.me/{SUPPORT_CHAT}')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
-        r_j = message.from_user.mention if message.from_user else "Anonymous"
         await message.reply_photo(
-            photo=random.choice(PICS), caption=f"<b>👋 හෙලෝ {r_j},\n\nමාව '{message.chat.title}' Group එකට Add කළාට Thank You, මට Admin දෙන්නත් අමතක කරන්න එපා, ඔයාට වැඩි විස්තර දැන ගැනීමට අවශය නම් Support Chat Group එකෙන් අහන්න... 😘</b>",
+            photo=random.choice(PICS), caption=f"<b>👋 හෙලෝ {message.from_user.mention},\n\nමාව '{message.chat.title}' Group එකට Add කළාට Thank You, මට Admin දෙන්නත් අමතක කරන්න එපා, ඔයාට වැඩි විස්තර දැන ගැනීමට අවශය නම් Support Chat Group එකෙන් අහන්න... 😘</b>",
             reply_markup=reply_markup)
     else:
         settings = await get_settings(message.chat.id)
