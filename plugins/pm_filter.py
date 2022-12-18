@@ -93,9 +93,6 @@ async def next_page(bot, query):
     if n_offset == 0:
 
         btn.append(
-            [InlineKeyboardButton("👇👇👇👇👇👇👇👇👇👇", callback_data="pages")]
-        )
-        btn.append(
              [InlineKeyboardButton(f"🗓 PAGES {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
                                   callback_data="pages")]
         )
@@ -107,18 +104,12 @@ async def next_page(bot, query):
         )
     elif off_set is None:
         btn.append(
-            [InlineKeyboardButton("👇👇👇👇👇👇👇👇👇👇", callback_data="pages")])
-        btn.append(
-            [InlineKeyboardButton(f"🗓 PAGE {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages")])
+            [InlineKeyboardButton(f"🗓 PAGES {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages")])
         btn.append(
             [InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
         btn.append(
             [InlineKeyboardButton("✅ How to Download ✅", callback_data="howtodownload")])
     else:
-        btn.append(
-            [InlineKeyboardButton("👇👇👇👇👇👇👇👇👇👇", callback_data="pages")
-            ],
-        )
         btn.append(
             [
                 InlineKeyboardButton(f"🗓 PAGES {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages")
@@ -442,7 +433,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer(f"හෙලෝ {query.from_user.first_name},\nමුලින්ම ඔය උඩින් තියන Buttons වළින් ඔයාට ඕන Movie එකේ හරි TV Series එකේ හරි නම හරියට බලලා ඔබන්න, ඊට පස්සේ Open වෙන බොටාගේ Start Button එක ඔබන්න...", show_alert=True)
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('➕ Add Me to Your Group ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ], [
             InlineKeyboardButton('❓ Help ❓', callback_data='help'),
             InlineKeyboardButton('ℹ️ About ℹ️', callback_data='about')
@@ -561,6 +552,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "bot_status":
+        await query.answer("Refreshing DataBase...")
         buttons = [[
             InlineKeyboardButton('◀️ Back', callback_data='about')
         ]]
@@ -694,10 +686,7 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton("👇👇👇👇👇👇👇👇👇👇", callback_data="pages")]
-        )
-        btn.append(
-            [InlineKeyboardButton(text=f"🗓 PAGE 1 / {math.ceil(int(total_results) / 10)}", callback_data="pages")]
+            [InlineKeyboardButton(text=f"🗓 PAGES 1 / {math.ceil(int(total_results) / 10)}", callback_data="pages")]
         )
         btn.append(
             [InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
@@ -706,9 +695,6 @@ async def auto_filter(client, msg, spoll=False):
             [InlineKeyboardButton("✅ How to Download ✅", callback_data="howtodownload")]
         )
     else:
-        btn.append(
-            [InlineKeyboardButton("👇👇👇👇👇👇👇👇👇👇", callback_data="pages")]
-        )
         btn.append(
             [InlineKeyboardButton(text="🗓 PAGES 1 / 1", callback_data="pages")]
         )
