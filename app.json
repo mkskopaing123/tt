@@ -1,7 +1,6 @@
 {
     "name": "Filters Bot",
     "description": "When you going to send file on telegram channel this bot will save that in database, So you can search that easily in inline mode.",
-    "stack": "container",
     "keywords": [
       "telegram",
       "auto-filter",
@@ -14,7 +13,6 @@
       "channel",
       "index"
     ],
-    "website": "https://github.com/HansakaAnuhas/FiltersBot",
     "repository": "https://github.com/HansakaAnuhas/FiltersBot",
     "env": {
         "BOT_TOKEN": {
