@@ -1,15 +1,15 @@
 class script(object):
-    START_TXT = """<b>👋 හෙලෝ {},
+    START_TXT = """👋 Hello {},
 
-මට පුළුවන් ඕනෑම Movie එකක් හරි TV Series එ... 🥳
+I can give any Movie or TV Series to auto filter method. 🥳
 
-ඔයාට කරන්න තියෙන්නේ මාව Group එකකට Add කරලා මට Admin දෙන්න විතරයි... 😌
+All you have to do is add me to a group and give me admin. 😌
 
-ඉතුරු හරිය මං බලා ගන්නම්.... 😎</b>"""
+I will take care of the rest. 😎"""
 
-    FORCESUB_TXT = """<b>👋 හෙලෝ {},
+    FORCESUB_TXT = """👋 Hello {},
 
-මුලින්ම මගේ Updates Channel එකට Join වෙන්න, ඊට පස්සේ ආයේ උත්සාහ කරන්න... 😇</b>"""
+First join my updates channel, Then try again. 😇"""
 
     ABOUT_TXT = """★ My Name: <a href=https://t.me/{}>{}</a>
 ★ Creator: <a href=https://t.me/Hansaka_Anuhas>Hansaka Anuhas</a> 🇱🇰
@@ -28,11 +28,11 @@ class script(object):
 <b>Alert Buttons:</b>
 <code>[Button Text](buttonalert:Alert Message)</code>"""
 
-    AUTOFILTERS_TXT = """<b>ඔයාගේ Movies සහ TV Series මට දෙන්නේ මෙහෙමයි:
+    AUTOFILTERS_TXT = """Your Movies and TV Series give me:
 
-1. ඔයාට Movies හරි TV Series හරි Channel එකක් තියෙනවනම්, මාව ඒකට Add කරලා මට Admin දෙන්න.
-2. ඔයාගේ Channel එකේ ඔයාට කැමති Message එකක් මට Forward කරන්න.
-3. ඉතුරු හරිය මං බලා ගන්නම්.</b>"""
+1. If you have a Movies or TV Series channel, Add me to it and give me admin.
+2. Forward me a message you like on your channel.
+3. I will take care of the rest."""
 
     CONNECTIONS_TXT = """• /connect - Connect PM
 • /disconnect - Disconnect PM
@@ -75,7 +75,7 @@ Name: {}
 ID: <code>{}</code>"""
     
     NO_RESULT = """#NoResult
-Group: {}
+Group Name: {}
+Group ID: <code>{}</code>
 Name: {}
-ID: <code>{}</code>
 Message: {}"""
