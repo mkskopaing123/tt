@@ -752,11 +752,9 @@ async def auto_filter(client, msg, spoll=False):
         except Exception as e:
             logger.exception(e)
             k = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
-            await k.delete() if settings['auto_delete'] else None
     else:
         k = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-    if msg:
+    if spoll:
           await msg.message.delete()
 
 
